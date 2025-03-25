@@ -28,8 +28,11 @@ models:
 
 seeds:
   dbt_project:
-    +schema: seed
+    +schema: seeds
 
 snapshots:
   dbt_project:
     +schema: snap
+
+data_tests:
+  +store_failures: true

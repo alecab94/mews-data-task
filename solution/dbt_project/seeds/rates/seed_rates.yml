@@ -4,28 +4,37 @@ seeds:
   - name: seed_rates
     description: >
       This seed is one of the inputs of the Mews Senior Data Analyst take-home
-      assignments. 
+      assignments. It contains rate relevant rate information associated to each
+      reservation.
+        
     config:
       tags: ["metadata"]
+      
     columns:
       - name: RateId
         data_type: text
-        description: Add description for column 'RateId' here 
+        description: Universal unique identifier for the rate (UUID).
+
       - name: RateName
         data_type: text
-        description: Add description for column 'RateName' here 
+        description: Full name of the rate offered.
+
       - name: ShortRateName
         data_type: text
-        description: Add description for column 'ShortRateName' here 
+        description: Short-hand name of the rate offered.
+
       - name: SettlementAction
         data_type: integer
-        description: Add description for column 'SettlementAction' here 
+        description: NA
+
       - name: SettlementTrigger
         data_type: integer
-        description: Add description for column 'SettlementTrigger' here 
+        description: NA
+
       - name: SettlementValue
         data_type: integer
-        description: Add description for column 'SettlementValue' here 
+        description: Monetary value of the rate offered.
+
       - name: SettlementType
         data_type: integer
-        description: Add description for column 'SettlementType' here 
+        description: NA

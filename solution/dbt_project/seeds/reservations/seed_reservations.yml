@@ -1,0 +1,111 @@
+version: 2
+
+seeds:
+  - name: seed_reservations
+    description: >
+      This seed is one of the inputs of the Mews Senior Data Analyst take-home
+      assignments. It contains transactional reservation data.
+      
+    config:
+      tags: ["transactional"]
+
+    columns:
+      - name: StartUtc
+        data_type: text
+        description: Start datetime (UTC) of the reservation.
+
+      - name: EndUtc
+        data_type: text
+        description: End datetime (UTC) of the reservation
+
+      - name: CreatedUtc
+        data_type: text
+        description: Datetime (UTC) when the reservation was created.
+
+      - name: NightCount
+        data_type: integer
+        description: Number of nights of the reservation.
+
+      - name: NightCost_Sum
+        data_type: double precision
+        description: Total cost of the reservation.
+
+      - name: OccupiedSpace_Sum
+        data_type: integer
+        description: Total capacity (# beds) of the reserved space.
+
+      - name: GuestCount_Sum
+        data_type: integer
+        description: Number of guests in the reservation.
+
+      - name: LeadTime
+        data_type: integer
+        description: Days between the booking of the reservation and the start of the stay. 
+
+      - name: StayLength
+        data_type: integer
+        description: Number of days of the reservation.
+
+      - name: CancellationReason
+        data_type: integer
+        description: ID for the cancellation reason.
+
+      - name: SettlementType
+        data_type: integer
+        description: NA
+
+      - name: ReservationState
+        data_type: integer
+        description: ID for the state of the reservation.
+
+      - name: Origin
+        data_type: integer
+        description: ID for the origin of the reservation.
+
+      - name: CommanderOrigin
+        data_type: integer
+        description: NA
+
+      - name: TravelAgency
+        data_type: text
+        description: Travel agency from which the booking of the reservation came from.
+
+      - name: IsOnlineCheckin
+        data_type: integer
+        description: Boolean (1, 0) indicating if the check-in for the reservation is done online.
+
+      - name: NationalityCode
+        data_type: text
+        description: Nationality (ISO 3166 country code) of the guest making the reservation.
+
+      - name: Gender
+        data_type: integer
+        description: Gender of the guest making the reservation. 
+
+      - name: Classification
+        data_type: integer
+        description: NA
+
+      - name: AgeGroup
+        data_type: integer
+        description: Age group of the guest making the resrvation.
+
+      - name: HasEmail
+        data_type: integer
+        description: Boolean (1, 0) indicating wether the guest making the reservation has an email address.
+
+      - name: EnterpriseTimeZone
+        data_type: integer
+        description: ID of the enterprize timezone.
+
+      - name: BusinessSegment
+        data_type: text
+        description: Indicates from which business segment this reservation came from.
+
+      - name: Tier
+        data_type: integer
+        description: ID for the tier of the reservation.
+
+      - name: RateId
+        data_type: text
+        description: Rate ID of the reservation.

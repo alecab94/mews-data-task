@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: stg_rates
+    description: >
+      This staging model casts and renames data coming from `seed_rates`, 
+      which contains relevant rate information associated with each reservation.
+
+    config:
+      tags: ["metadata"]
+      contract: {enforced: true}
+
+    constraints:
+      - type: primary_key
+        columns: [rate_id]
+      - type: unique
+        columns: [rate_id]
+      - type: not_null
+        columns: [rate_id]
+
+    config:
+      tags: ["metadata"]
+      
+    columns:
+      - name: rate_id
+        data_type: text
+        description: Universal unique identifier for the rate (UUID).
+        data_tests:
+          - not_null
+          - unique
+
+      - name: rate_name
+        data_type: text
+        description: Full name of the rate offered.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: short_rate_name
+        data_type: text
+        description: Short-hand name of the rate offered.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: settlement_action
+        data_type: integer
+        description: NA
+        data_tests:
+          - not_null
+
+      - name: settlement_trigger
+        data_type: integer
+        description: NA
+        data_tests:
+          - not_null
+
+      - name: settlement_value
+        data_type: integer
+        description: Monetary value of the rate offered.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: settlement_type
+        data_type: integer
+        description: NA
+        data_tests:
+          - not_null

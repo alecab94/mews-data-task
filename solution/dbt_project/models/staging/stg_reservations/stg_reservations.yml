@@ -1,0 +1,172 @@
+version: 2
+
+models:
+  - name: stg_reservations
+    description: >
+      This staging model casts and renames data coming from `seed_reservations`, 
+      which contains transactional data of reservations made.   
+
+    config:
+      tags: ["transactional"]
+      contract: {enforced: true}
+
+    data_tests:
+      - dbt_utils.expression_is_true:
+          expression: "start_datetime_utc < end_datetime_utc"
+      - dbt_utils.expression_is_true:
+          expression: "(DATE(creation_datetime_utc) - INTERVAL '1 DAY') <= DATE(start_datetime_utc)"
+    
+    columns:
+      - name: start_datetime_utc
+        data_type: timestamp with time zone
+        description: The UTC start date and time of the reservation.
+        data_tests:
+          - not_null
+
+      - name: end_datetime_utc
+        data_type: timestamp with time zone
+        description: The UTC end date and time of the reservation.
+        data_tests:
+          - not_null
+
+      - name: creation_datetime_utc
+        data_type: timestamp with time zone
+        description: The UTC timestamp when the reservation was created.
+        data_tests:
+          - not_null
+
+      - name: number_of_nights
+        data_type: integer
+        description: The total number of nights booked for the reservation.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
+      - name: total_night_cost
+        data_type: double precision
+        description: The total revenue generated from the room cost across all booked nights.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: total_space_capacity
+        data_type: integer
+        description: The aggregated capacity (number of beds) available in the reserved space.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+              config:
+                severity: warn
+
+      - name: number_of_guests
+        data_type: integer
+        description: The total number of guests associated with the reservation.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: "> 0"
+
+      - name: lead_time_days
+        data_type: integer
+        description: The number of days between the booking date and the start of the reservation.
+        data_tests:
+          - not_null
+
+      - name: stay_length_days
+        data_type: integer
+        description: The number of days that the reservation spans (length of stay).
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: cancellation_reason
+        data_type: integer
+        description: An identifier for the reason a reservation was cancelled, if applicable.
+
+      - name: settlement_type
+        data_type: integer
+        description: An identifier indicating the type of settlement associated with the reservation.
+        data_tests:
+          - not_null
+
+      - name: reservation_state
+        data_type: integer
+        description: An identifier representing the current state/status of the reservation.
+        data_tests:
+          - not_null
+
+      - name: origin
+        data_type: integer
+        description: An identifier for the source/origin of the reservation.
+        data_tests:
+          - not_null
+
+      - name: commander_origin
+        data_type: integer
+        description: Additional origin information for the reservation (if applicable).
+
+      - name: travel_agency
+        data_type: text
+        description: The travel agency through which the reservation was booked.
+
+      - name: is_online_checkin
+        data_type: integer
+        description: Indicates whether check-in was completed online (1 for true, 0 for false).
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+
+      - name: nationality_code
+        data_type: text
+        description: The ISO 3166 country code of the guest making the reservation.
+
+      - name: gender
+        data_type: integer
+        description: A numeric identifier representing the guest's gender.
+        data_tests:
+          - not_null
+
+      - name: classification
+        data_type: integer
+        description: An identifier for additional classification of the guest or reservation (if applicable).
+
+      - name: age_group
+        data_type: integer
+        description: The age group category of the guest who made the reservation.
+        data_tests:
+          - not_null
+
+      - name: has_email
+        data_type: integer
+        description: A boolean flag (1 for yes, 0 for no) indicating if the guest provided an email address.
+        data_tests:
+          - not_null
+          - accepted_values:
+              values: [0, 1]
+
+      - name: enterprise_time_zone
+        data_type: integer
+        description: An identifier for the enterprise timezone associated with the reservation.
+        data_tests:
+          - not_null
+
+      - name: business_segment
+        data_type: text
+        description: The business segment from which the reservation originated.
+
+      - name: tier
+        data_type: integer
+        description: An identifier for the reservation tier.
+        data_tests:
+          - not_null
+
+      - name: rate_id
+        data_type: text
+        description: The unique identifier (UUID) for the rate applied to the reservation.
+        data_tests:
+          - not_null
