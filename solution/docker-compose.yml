@@ -1,0 +1,35 @@
+services:
+  postgres:
+    image: postgres:13
+    restart: always
+    container_name: mews-postgres-db
+    environment:
+      POSTGRES_USER: mews_user
+      POSTGRES_PASSWORD: postgres_password
+      POSTGRES_DB: mews-data-task-db
+    volumes:
+      - pgdata:/var/lib/postgresql/mews-data-task
+    ports:
+      - "5433:5432"
+    networks:
+      - my-network
+  pgadmin:
+    image: dpage/pgadmin4
+    restart: always
+    container_name: mews-pgadmin
+    environment:
+      PGADMIN_DEFAULT_EMAIL: employee@mews.com
+      PGADMIN_DEFAULT_PASSWORD: pgadmin_password
+    ports:
+      - "8081:80"
+    depends_on:
+      - postgres
+    networks:
+      - my-network
+
+volumes:
+  pgdata:
+
+networks:
+  my-network:
+    driver: bridge
