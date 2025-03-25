@@ -1,0 +1,31 @@
+version: 2
+
+seeds:
+  - name: seed_rates
+    description: >
+      This seed is one of the inputs of the Mews Senior Data Analyst take-home
+      assignments. 
+    config:
+      tags: ["metadata"]
+    columns:
+      - name: RateId
+        data_type: text
+        description: Add description for column 'RateId' here 
+      - name: RateName
+        data_type: text
+        description: Add description for column 'RateName' here 
+      - name: ShortRateName
+        data_type: text
+        description: Add description for column 'ShortRateName' here 
+      - name: SettlementAction
+        data_type: integer
+        description: Add description for column 'SettlementAction' here 
+      - name: SettlementTrigger
+        data_type: integer
+        description: Add description for column 'SettlementTrigger' here 
+      - name: SettlementValue
+        data_type: integer
+        description: Add description for column 'SettlementValue' here 
+      - name: SettlementType
+        data_type: integer
+        description: Add description for column 'SettlementType' here 

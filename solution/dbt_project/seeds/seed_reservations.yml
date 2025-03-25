@@ -1,0 +1,83 @@
+version: 2
+
+seeds:
+  - name: seed_reservations
+    description: Add description for seeds 'seed.seed_reservations' here  
+    config:
+      tags: ["transactional"]
+    columns:
+      - name: StartUtc
+        data_type: text
+        description: Add description for column 'StartUtc' here 
+      - name: EndUtc
+        data_type: text
+        description: Add description for column 'EndUtc' here 
+      - name: CreatedUtc
+        data_type: text
+        description: Add description for column 'CreatedUtc' here 
+      - name: NightCount
+        data_type: integer
+        description: Add description for column 'NightCount' here 
+      - name: NightCost_Sum
+        data_type: double precision
+        description: Add description for column 'NightCost_Sum' here 
+      - name: OccupiedSpace_Sum
+        data_type: integer
+        description: Add description for column 'OccupiedSpace_Sum' here 
+      - name: GuestCount_Sum
+        data_type: integer
+        description: Add description for column 'GuestCount_Sum' here 
+      - name: LeadTime
+        data_type: integer
+        description: Add description for column 'LeadTime' here 
+      - name: StayLength
+        data_type: integer
+        description: Add description for column 'StayLength' here 
+      - name: CancellationReason
+        data_type: integer
+        description: Add description for column 'CancellationReason' here 
+      - name: SettlementType
+        data_type: integer
+        description: Add description for column 'SettlementType' here 
+      - name: ReservationState
+        data_type: integer
+        description: Add description for column 'ReservationState' here 
+      - name: Origin
+        data_type: integer
+        description: Add description for column 'Origin' here 
+      - name: CommanderOrigin
+        data_type: integer
+        description: Add description for column 'CommanderOrigin' here 
+      - name: TravelAgency
+        data_type: text
+        description: Add description for column 'TravelAgency' here 
+      - name: IsOnlineCheckin
+        data_type: integer
+        description: Add description for column 'IsOnlineCheckin' here 
+      - name: NationalityCode
+        data_type: text
+        description: Add description for column 'NationalityCode' here 
+      - name: Gender
+        data_type: integer
+        description: Add description for column 'Gender' here 
+      - name: Classification
+        data_type: integer
+        description: Add description for column 'Classification' here 
+      - name: AgeGroup
+        data_type: integer
+        description: Add description for column 'AgeGroup' here 
+      - name: HasEmail
+        data_type: integer
+        description: Add description for column 'HasEmail' here 
+      - name: EnterpriseTimeZone
+        data_type: integer
+        description: Add description for column 'EnterpriseTimeZone' here 
+      - name: BusinessSegment
+        data_type: text
+        description: Add description for column 'BusinessSegment' here 
+      - name: Tier
+        data_type: integer
+        description: Add description for column 'Tier' here 
+      - name: RateId
+        data_type: text
+        description: Add description for column 'RateId' here 
