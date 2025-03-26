@@ -23,7 +23,7 @@ models:
       +schema: int
       +materialized: table
     marts:
-      +schema: int
+      +schema: mart
       +materialized: table
 
 seeds:
@@ -36,3 +36,9 @@ snapshots:
 
 data_tests:
   +store_failures: true
+
+vars:
+  segment_types:
+    age_group: age_group
+    gender: gender
+    nationality_code: nationality_code
