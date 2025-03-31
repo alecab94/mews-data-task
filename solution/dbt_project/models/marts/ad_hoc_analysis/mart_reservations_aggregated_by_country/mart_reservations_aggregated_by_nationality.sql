@@ -1,4 +1,4 @@
--- depends_on: {{ ref('stg_reservations') }}
+-- depends_on: {{ ref('int_reservations_enriched') }}
 
 {% set segment_type = var('segment_types')['nationality_code'] %}
 
