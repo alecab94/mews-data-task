@@ -3,8 +3,8 @@ version: 2
 models:
   - name: stg_reservations
     description: >
-      This staging model casts and renames data coming from `seed_reservations`, 
-      which contains transactional data of reservations made.   
+      This staging model casts and renames data coming from `seed_reservations`,
+      which contains transactional data of reservations made.
 
     config:
       tags: ["transactional"]
@@ -15,7 +15,7 @@ models:
           expression: "start_datetime_utc < end_datetime_utc"
       - dbt_utils.expression_is_true:
           expression: "(DATE(creation_datetime_utc) - INTERVAL '1 DAY') <= DATE(start_datetime_utc)"
-    
+
     columns:
       - name: start_datetime_utc
         data_type: timestamp with time zone

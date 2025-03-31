@@ -3,7 +3,7 @@ version: 2
 models:
   - name: stg_rates
     description: >
-      This staging model casts and renames data coming from `seed_rates`, 
+      This staging model casts and renames data coming from `seed_rates`,
       which contains relevant rate information associated with each reservation.
 
     config:
@@ -20,7 +20,7 @@ models:
 
     config:
       tags: ["metadata"]
-      
+
     columns:
       - name: rate_id
         data_type: text

@@ -9,4 +9,4 @@ dbt_project:
       port: 5433
       dbname: mews-data-task-db
       schema: dev
-      
+

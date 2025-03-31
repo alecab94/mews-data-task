@@ -1,0 +1,7 @@
+reports/
+target/
+dbt_packages/
+macros/
+logs/
+.venv/
+__pycache__/

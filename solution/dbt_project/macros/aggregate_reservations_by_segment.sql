@@ -15,7 +15,7 @@
 
 
         aggregation_by_segment as (
-            SELECT 
+            SELECT
                 {{ segment_type }},
                 rate_name,
                 COUNT(*) AS number_of_reservations,
@@ -45,9 +45,9 @@
                 ROUND(
                     (
                         SUM(
-                            CASE 
-                                WHEN is_online_checkin = 1 THEN 1 
-                                ELSE 0 
+                            CASE
+                                WHEN is_online_checkin = 1 THEN 1
+                                ELSE 0
                             END
                         )::numeric
                         / NULLIF(COUNT(*), 0)
@@ -55,7 +55,7 @@
                     2
                 ) AS relative_pct_of_online_checkin
             FROM reservations
-            GROUP BY 
+            GROUP BY
                 rate_name,
                 {{ segment_type }}
             ORDER BY

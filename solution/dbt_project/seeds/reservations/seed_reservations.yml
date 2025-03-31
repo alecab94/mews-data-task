@@ -5,7 +5,7 @@ seeds:
     description: >
       This seed is one of the inputs of the Mews Senior Data Analyst take-home
       assignments. It contains transactional reservation data.
-      
+
     config:
       tags: ["transactional"]
 
@@ -40,7 +40,7 @@ seeds:
 
       - name: LeadTime
         data_type: integer
-        description: Days between the booking of the reservation and the start of the stay. 
+        description: Days between the booking of the reservation and the start of the stay.
 
       - name: StayLength
         data_type: integer
@@ -80,7 +80,7 @@ seeds:
 
       - name: Gender
         data_type: integer
-        description: Gender of the guest making the reservation. 
+        description: Gender of the guest making the reservation.
 
       - name: Classification
         data_type: integer

@@ -35,7 +35,7 @@ In this report we will analyze different customer segments (age group, gender, a
 
 3. Which guest segments are the most and least profitable when measured by average night revenue per single occupied space?
 
-Our goal is not only to answer these questions quantitatively, but also *understand* the why behind what the numbers tell us. 
+Our goal is not only to answer these questions quantitatively, but also *understand* the why behind what the numbers tell us.
 
 We will study each customer segment independently, given that the volume of data is not enough to study trends taking into account various categories at the same time. Before we begin, it is important to run through the definitions and assumptions set for the purpose of this analysis.
 
@@ -89,10 +89,10 @@ From the table above we can see which gender booked the most reservations for ea
 
 Top 3 booking rates:
 
-- **Early - 60 days (49.53%)** 
-- **Fully Flexible  (27.07%)** 
-- **Early - 21 days (12.41%)** 
-    
+- **Early - 60 days (49.53%)**
+- **Fully Flexible  (27.07%)**
+- **Early - 21 days (12.41%)**
+
 Almost two out of every three reservations made by gender 0 are using 'Early' booking rates. This shows a tendency to plan ahead in order to get more affordable rates, indicating they are most likely price conscious (high price elasticity). Be that as it may, a significant portion of this group also enjoys flexibility and is willing to pay for it. Overall, dispersion is low, with most of the bookings focused on these three rates.
 
 #### **Gender 1:**
@@ -112,9 +112,9 @@ Almost two out of every three reservations made by gender 0 are using 'Early' bo
 
 Top 3 booking rates:
 
-- **Fully Flexible  (58.15%)** 
-- **Early - 60 days (12.74%)** 
-- **Early - 21 days (10.58%)** 
+- **Fully Flexible  (58.15%)**
+- **Early - 60 days (12.74%)**
+- **Early - 21 days (10.58%)**
 
 This group values flexibility the most, with about three out of five opting for full flexibility, meaning that they tend to prefer peace of mind higher in exchange for a higher rate. About one in four, however, does take advantage of lower rates by planning their reservation in advance. Additionally, almost one in ten enjoys non-refundable offers, indicating lower risk aversion than gender 0.
 
@@ -135,9 +135,9 @@ This group values flexibility the most, with about three out of five opting for 
 
 Top 3 booking rates:
 
-- **Fully Flexible  (46.94%)** 
-- **Non Refundable BAR BB (18.33%)** 
-- **Early - 21 days (12.50%)** 
+- **Fully Flexible  (46.94%)**
+- **Non Refundable BAR BB (18.33%)**
+- **Early - 21 days (12.50%)**
 
 Gender 2 mainly prefers flexibility, with close to one in two choosing 'Fully Flexible' booking rate. They have the highest usage of non-refundable rates, with almost one in five choosing to take a risk in exchange for a better rate, indicating the lowest risk aversion of any gender. Additionally, a significant portion (18.06%) chooses 'Early' rates as a way to enjoy cheaper prices. In conjunction, 36.39% of guests in this group opt for rates that would lower the price of the reservation. Finally, we also notice that this gender has the highest participation of the 'Suite Offer' rate out of any other, with 3.33%.
 
@@ -172,7 +172,7 @@ In summary:
 | 0         | Suite Offer            | 11                      |
 | 0         | Min 5 nights           | 3                       |
 
-As in the case for gender, here we can also see the top age groups per booking rate. To gain more insights into the trends of each group, let's break down the analysis:
+As in the case for gender, here we can also see the top age groups per booking rate. It is not surprising age group 0 is leading in almsot all booking rates if this group acts like a 'null' or 'other' for this segment, catching all reservations with no age group. To gain more insights into the trends of each group, let's break down the analysis:
 
 #### **Age Group 0:**
 
@@ -192,11 +192,11 @@ As in the case for gender, here we can also see the top age groups per booking r
 
 Top 3 booking rates:
 
-- **Fully Flexible (43.55%)** 
-- **Early - 60 days  (35.46%)** 
-- **Early - 21 days (12.76%)** 
+- **Fully Flexible (43.55%)**
+- **Early - 60 days  (35.46%)**
+- **Early - 21 days (12.76%)**
 
-Age group 0 booking rate preferences have low dispersion. 91.77% of all reservations are made using the top three rates listed above. Even though 'Fully Flexible' rate accounts for the mayority of the mayority of reservations, 'Early' rates, when considered in conjunction compose a 48.22% of bookings. This indicates that this group tends to enjoy lower rates by early planning. When they don't, they opt for peace of mind despite the higher cost. 
+Age group 0 booking rate preferences have low dispersion. 91.77% of all reservations are made using the top three rates listed above. Even though 'Fully Flexible' rate accounts for the mayority of the mayority of reservations, 'Early' rates, when considered in conjunction compose a 48.22% of bookings. This indicates that this group tends to enjoy lower rates by early planning. When they don't, they opt for peace of mind despite the higher cost.
 
 #### **Age Group 25:**
 
@@ -217,9 +217,9 @@ Age group 0 booking rate preferences have low dispersion. 91.77% of all reservat
 
 Top 3 booking rates:
 
-- **Fully Flexible (44.02%)**  
-- **Non Refundable BAR BB (24.36%)**  
-- **Early - 21 days (12.39%)**  
+- **Fully Flexible (44.02%)**
+- **Non Refundable BAR BB (24.36%)**
+- **Early - 21 days (12.39%)**
 
 This group values flexibility the most, with almost one in five opting for flexibility despite the higher average reservation cost. Additionally, one in four opts for a non-refundable rate, indicating a low risk aversion. About 15% takes advantage of 'Early' booking rates to enjoy lower prices. General booking behaviour is similar to age group 0, but with slightly higher dispersion, with more than 10% of bookings being made using 'minimum nights' rates.
 
@@ -241,9 +241,9 @@ This group values flexibility the most, with almost one in five opting for flexi
 
 Top 3 booking rates:
 
-- **Fully Flexible (50.90%)**  
-- **Non Refundable BAR BB (20.43%)**  
-- **Early - 21 days (11.83%)**  
+- **Fully Flexible (50.90%)**
+- **Non Refundable BAR BB (20.43%)**
+- **Early - 21 days (11.83%)**
 
 Slightly more than half of all reservations in this group are made with a fully flexible rate, showing a strong preference for flexibility. However, one in five guests still opts for non-refundable options, indicating price sensitivity. Combined, early rates are used in nearly 17% of bookings, showing some planning ahead.
 
@@ -266,9 +266,9 @@ Slightly more than half of all reservations in this group are made with a fully 
 
 Top 3 booking rates:
 
-- **Fully Flexible (52.70%)**  
-- **Non Refundable BAR BB (17.01%)**  
-- **Early - 21 days (11.20%)**  
+- **Fully Flexible (52.70%)**
+- **Non Refundable BAR BB (17.01%)**
+- **Early - 21 days (11.20%)**
 
 This group shows the highest preference for fully flexible rates among all age brackets, with over half choosing this option. The rest of the distribution is modestly spread between non-refundable and early rates, indicating a moderate mix of planning and cost-saving strategies, but an overall lean toward low-risk choices.
 
@@ -290,9 +290,9 @@ This group shows the highest preference for fully flexible rates among all age b
 
 Top 3 booking rates:
 
-- **Fully Flexible (53.42%)**  
-- **Non Refundable BAR BB (13.01%)**  
-- **Early - 21 days (12.33%)**  
+- **Fully Flexible (53.42%)**
+- **Non Refundable BAR BB (13.01%)**
+- **Early - 21 days (12.33%)**
 
 A majority in this age group prefers fully flexible bookings. Early rates and non-refundable bookings are almost equally popular, suggesting this group occasionally seeks out lower prices through early commitments but still leans toward flexibility and reliability. The overall rate distribution is consistent with age group 45.
 
@@ -313,9 +313,9 @@ A majority in this age group prefers fully flexible bookings. Early rates and no
 
 Top 3 booking rates:
 
-- **Fully Flexible (55.38%)**  
-- **Non Refundable BAR BB (13.85%)**  
-- **Early - 21 days (12.31%)**  
+- **Fully Flexible (55.38%)**
+- **Non Refundable BAR BB (13.85%)**
+- **Early - 21 days (12.31%)**
 
 With over 55% opting for fully flexible rates, this group shows the strongest tendency toward risk-averse booking behavior. Early and non-refundable bookings together form just over a quarter of total reservations. The preferences suggest a prioritization of convenience and adaptability over cost savings.
 
@@ -334,9 +334,9 @@ With over 55% opting for fully flexible rates, this group shows the strongest te
 
 Top 3 booking rates:
 
-- **Early - 21 days (37.50%)**  
-- **Early - 60 days (25.00%)**  
-- **Fully Flexible (18.75%)** 
+- **Early - 21 days (37.50%)**
+- **Early - 60 days (25.00%)**
+- **Fully Flexible (18.75%)**
 
 This group's booking behavior contrasts sharply with others. Over 60% of reservations fall under early rates, highlighting a highly proactive and cost-saving approach. Flexible rates rank third, suggesting that peace of mind is still a factor, though less prioritized.This age group appears to be the most forward-planning of all. Be that as it may, due to the low sample size, these results should not be taken as a certaininty as they are not statistically significant.
 
@@ -468,7 +468,7 @@ Age-Related Behavior:
 
 - These four age groups account for the majority of online check-ins. Guests aged 65 and above show significantly lower engagement with online check-in. Age groups marked as 0 and 100 are not engaging in online check-in at all.
 
-Online Check-In participation in Age Group 25 reaches a maximum on Saturdays, with 1 out of 4 reservations created that day having online check-in.  
+Online Check-In participation in Age Group 25 reaches a maximum on Saturdays, with 1 out of 4 reservations created that day having online check-in.
 
 ### Nationality
 
@@ -487,9 +487,11 @@ RU, GB and US lead the use of online check-in by nationality with about 1 in 10 
 
 In this case, we have insufficient data to make a determination if countries behave in a different manner when it comes to the use of online check-in for different week days. The highest number of online check-in is on Mondays for GB and that is just 6 reservations.
 
-## Profitability Analyis by Customer Segment
+## Profitability Analysis by Customer Segment
 
 To calculate average night revenue per unit capacity, we have obtained the cost per night for each reservation and divided that about by the amount of rooms in the reservation. Then depending which group we are taking a look at, we take the corresponding average of the night cost per unit capacity. This is done for reservations that have been cancelled, as these are realized into revenue.
+
+$$ \text{average night cost per unit capacity} = \frac{1}{n} \sum^n \left( \frac{\text{reservation cost}}{\text{number of nights}} \times \frac{1}{\text{room capacity}} \right) $$
 
 Here is the breakdown per segment:
 

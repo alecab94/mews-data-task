@@ -8,7 +8,7 @@
 Runtime Error
   No dbt_project.yml found at expected path /home/alecab/projects/mews-data-task/solution/dbt_project.yml
   Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
-  
+
 [0m18:31:27.123940 [debug] [MainThread]: Resource report: {"command_name": "seed", "command_success": false, "command_wall_clock_time": 0.04795776, "process_in_blocks": "46400", "process_kernel_time": 0.110927, "process_mem_max_rss": "91308", "process_out_blocks": "8", "process_user_time": 1.038681}
 [0m18:31:27.124279 [debug] [MainThread]: Command `dbt seed` failed at 18:31:27.124200 after 0.05 seconds
 [0m18:31:27.124539 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e07476870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e06e353d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x7f2e07195640>]}

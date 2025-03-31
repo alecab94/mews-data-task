@@ -115,4 +115,3 @@ Landing page of the report where you can quickly navigate to the desired page
   - **Cards:** Clearly indicate Actual Revenue, Simulated Revenue, and Revenue Difference.
 
 ![alt text](images/simulation.png)
-

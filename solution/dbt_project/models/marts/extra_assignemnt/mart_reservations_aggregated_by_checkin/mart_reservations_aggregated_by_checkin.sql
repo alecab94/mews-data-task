@@ -1,25 +1,31 @@
 -- This is the default template for models
 
-WITH 
+with
 
-    reservations AS (
-        SELECT *
-        FROM {{ ref('int_reservations_enriched') }}
-    ),
+reservations as (
+    select *
+    from {{ ref('int_reservations_enriched') }}
+),
 
-    online_reservation_aggr as (
-        SELECT 
-        date_trunc('month', start_datetime_utc) AS month_date,
-        COUNT(*) AS total_reservations,
+online_reservation_aggr as (
+    select
+        date_trunc('month', start_datetime_utc) as month_date,
+        count(*) as total_reservations,
         sum(total_night_cost) as total_night_cost,
-        COUNT(*) FILTER (WHERE is_online_checkin = 0) AS offline_reservations,
-        COALESCE(SUM(total_night_cost::numeric) FILTER (WHERE is_online_checkin = 0), 0) AS offline_reservations_cost,
-        COUNT(*) FILTER (WHERE is_online_checkin = 1) AS online_reservations,
-        COALESCE(SUM(total_night_cost::numeric) FILTER (WHERE is_online_checkin = 1), 0) AS online_reservations_cost
-    FROM reservations
+        count(*) filter (where is_online_checkin = 0) as offline_reservations,
+        coalesce(
+            sum(total_night_cost::numeric) filter (where is_online_checkin = 0),
+            0
+        ) as offline_reservations_cost,
+        count(*) filter (where is_online_checkin = 1) as online_reservations,
+        coalesce(
+            sum(total_night_cost::numeric) filter (where is_online_checkin = 1),
+            0
+        ) as online_reservations_cost
+    from reservations
     where cancellation_reason is null
-    GROUP BY date_trunc('month', start_datetime_utc)
-    ORDER BY month_date
-    )
+    group by date_trunc('month', start_datetime_utc)
+    order by month_date
+)
 
-SELECT * FROM online_reservation_aggr
+select * from online_reservation_aggr

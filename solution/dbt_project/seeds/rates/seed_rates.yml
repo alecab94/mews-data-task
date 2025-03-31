@@ -6,10 +6,10 @@ seeds:
       This seed is one of the inputs of the Mews Senior Data Analyst take-home
       assignments. It contains rate relevant rate information associated to each
       reservation.
-        
+
     config:
       tags: ["metadata"]
-      
+
     columns:
       - name: RateId
         data_type: text

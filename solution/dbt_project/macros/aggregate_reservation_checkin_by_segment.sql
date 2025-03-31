@@ -33,11 +33,11 @@ WITH aggregated_reservations AS (
     GROUP BY
         {% if by_week_day %}
             creation_week_day,
-        {% endif %}        
+        {% endif %}
         {{ segment }}
 )
 
-SELECT * FROM aggregated_reservations 
+SELECT * FROM aggregated_reservations
 ORDER BY {% if by_week_day %} creation_week_day, {% endif %} pct_of_online_checkin desc
 
 {% endmacro %}

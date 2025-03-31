@@ -24,9 +24,9 @@ In the first scenario, the task above with all three points is assigned to you b
 
 In the second scenario, the task is assigned to you by a product manager who wants you to build a report so that she can keep track of the situation and it's easy for her to check the answers for all three points. Also she mentioned she'll have few more questions later. For the purpose of this interview task, we prefer you use Power BI. You may also use Excel, jupyter notebook, or similar tool.
 
-As a bonus assignment, we want to motivate our hotels to promote online checkin and we want to give them some hard data. Look at the data and your analysis again and estimate what would be the impact on total room revenue if the overall usage of online checkin doubled. 
+As a bonus assignment, we want to motivate our hotels to promote online checkin and we want to give them some hard data. Look at the data and your analysis again and estimate what would be the impact on total room revenue if the overall usage of online checkin doubled.
 
-Include the comments to present your solution and send submit it via Greenhouse Recruiting platform. As a part of the interview process, we have also created for you a Slack channel where you can reach out to us if you have any questions about the assignment or more follow-up questions about the role or Mews. 
+Include the comments to present your solution and send submit it via Greenhouse Recruiting platform. As a part of the interview process, we have also created for you a Slack channel where you can reach out to us if you have any questions about the assignment or more follow-up questions about the role or Mews.
 
 Thanks and good luck.
 
@@ -40,13 +40,13 @@ For 3rd task, you will use `NightCost_Sum` (i.e. room revenue) and `OccupiedSpac
 
 
 ```sql
-SELECT 
+SELECT
  ...
  ISNULL(SUM(RoomCategory.[Capacity] + RoomCategory.[ExtraCapacity]), 0) as OccupiedSpace_Sum,
  ...
 FROM Reservation
 LEFT JOIN Room ON (Room.Id = Reservation.AssignedRoomId)
-LEFT JOIN RoomCategory ON (RoomCategory.ID = Room.CategoryId) 
+LEFT JOIN RoomCategory ON (RoomCategory.ID = Room.CategoryId)
 ```
 
 where `Capacity` is pretty much how many people you can fit into the space, or more vaguely how many beds are there.
