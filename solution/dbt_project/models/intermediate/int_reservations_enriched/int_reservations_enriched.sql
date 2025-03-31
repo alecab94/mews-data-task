@@ -41,17 +41,12 @@ calculate_reservation_metrics as (
         *,
         total_night_cost / number_of_nights as cost_per_night,
         case
-            when
-                total_space_capacity = 0
-                then total_night_cost / (number_of_nights * number_of_guests)
+            when total_space_capacity = 0 then total_night_cost / (number_of_nights * number_of_guests)
             else total_night_cost / (number_of_nights * total_space_capacity)
         end as night_cost_per_unit_capacity,
         case
             when total_space_capacity = 0 then 1
-            else
-                ROUND(
-                    number_of_guests::numeric / total_space_capacity::numeric, 2
-                )
+            else ROUND(number_of_guests::numeric / total_space_capacity::numeric, 2)
         end as occupancy_rate,
         TRIM(TO_CHAR(creation_datetime_utc, 'Day')) as creation_week_day
     from reservations
