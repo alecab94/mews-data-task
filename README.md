@@ -1,6 +1,6 @@
 # Mews Data Analyst Task
 
-This is a solution to the MEWS Data Analyst Task avaliable [here](https://github.com/MewsSystems/developers/blob/726685ffd908770928413f58302d0a3c70bab550/jobs/Data/Readme.md).
+This is a solution to the MEWS Data Analyst Task available [here](https://github.com/MewsSystems/developers/blob/726685ffd908770928413f58302d0a3c70bab550/jobs/Data/Readme.md).
 Input CSV files are loaded into a Postgres database in a docker container using dbt seeds. Then, data is staged, transformed, and prepared for analysis for either an ad-hoc report or consumption by the Power BI dashboard prepared.
 
 ## Project Structure
@@ -34,7 +34,7 @@ First, clone the repository by running:
 git clone https://github.com/alecab94/mews-data-task
 ```
 
-### Step 2: Navitage to the solution directory
+### Step 2: Navigate to the solution directory
 
 ```bash
 cd solution/

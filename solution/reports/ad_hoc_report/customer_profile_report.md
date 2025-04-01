@@ -27,7 +27,7 @@
 
 ## Introduction
 
-In this report we will analyze different customer segments (age group, gender, and nationality) to identify reservation trends that might uncover behavioural patterns which will help guide the desicion making process. In particular, we are interested in:
+In this report we will analyze different customer segments (age group, gender, and nationality) to identify reservation trends that might uncover behavioral  patterns which will help guide the decision making process. In particular, we are interested in:
 
 1. What are the popular choices of booking rates for different segments of customers?
 
@@ -41,13 +41,13 @@ We will study each customer segment independently, given that the volume of data
 
 ### Definitions and Assumptions
 
-- To answer the first question, we must clearly identify what is meant by *popularity* and how can we best measure it. Since we only have a single data point per segment for each reservation, for the purposes of this report, it will be measured by the number of reservations made by any given segment. More specifically, we will look at the relative percentage of reservations made by booking rate for each group in each segment. Alternatively, if we had acces to demographical information of each guest in the reservation, measuring popularity as 'Number of Reservations' times 'Number of Guests' would yield a larger sample size, which would increase the confidence in the results.
+- To answer the first question, we must clearly identify what is meant by *popularity* and how can we best measure it. Since we only have a single data point per segment for each reservation, for the purposes of this report, it will be measured by the number of reservations made by any given segment. More specifically, we will look at the relative percentage of reservations made by booking rate for each group in each segment. Alternatively, if we had access to demographic information of each guest in the reservation, measuring popularity as 'Number of Reservations' times 'Number of Guests' would yield a larger sample size, which would increase the confidence in the results.
 
-    Additionally, in this case, we will include all reservations in the analysis, even cancelled reservations. Given that we assume the interest to stay was present, but the reservation got cancelled due to an unforeseen event. That being said however, interest was established. Which could be argued that it counts towards contributing to popularity of a booking rate. Furthermore, it stands to reason that reservations under the Fully Flexible rate are highly impacted by cancellations. If we did not include cancellations, correctly gauging interest in preferences like flexibility would not be possible due to survivorship bias.
+    Additionally, in this case, we will include all reservations in the analysis, even cancelled reservations. Given that we assume the interest to stay was present, but the reservation was cancelled due to an unforeseen event. That being said however, interest was established. Which could be argued that it counts towards contributing to the popularity of a booking rate. Furthermore, it stands to reason that reservations under the Fully Flexible rate are highly impacted by cancellations. If we did not include cancellations, correctly gauging interest in preferences like flexibility would not be possible due to survivorship bias.
 
 - When analyzing groups by nationality, we will only consider those which have more than 50 reservations in total. This is so we can draw conclusions that at least have *some* statistical significance.
 
-- There are 100 instances with of duplicate reservations, with one of them having as many as 22 ocurrances. For this analysis, we will assume these cases are not duplicates of the same reservation that should be cleaned up from the dataset, but rather valid reservations made during the same bulk purchase.
+- There are 100 instances of duplicate reservations, with one of them having as many as 22 occurrences. For this analysis, we will assume these that cases are not duplicates of the same reservation that should be cleaned from the dataset, but rather valid reservations made during the same bulk purchase.
 
 - In this dataset, some values for total space capacity are equal to 0. Whenever this happens, we will assume the total capacity of the space to be equal to the number of guests staying.
 
@@ -72,9 +72,9 @@ We will study each customer segment independently, given that the volume of data
 | 2      | Suite Offer              | 12                      |
 | 1      | Min 5 nights             | 4                       |
 
-From the table above we can see which gender booked the most reservations for each available booking rate. However, this only doesn't give us much insights into the behavioural patterns of the genders themselves, given that the booking volumes might differ substatially. To gain a better understanding of booking rate preferences by gender, let's look at each one individually and how the distribution of choice looks.
+From the table above we can see which gender booked the most reservations for each available booking rate. However, this doesn't give us much insight into the behavioral patterns of the genders themselves, given that the booking volumes might differ substantially. To gain a better understanding of booking rate preferences by gender, let's look at each one individually and how the distribution of choice looks.
 
-#### **Gender 0:**
+#### Gender 0:
 | Gender | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |--------|--------------------------|-------------------------|-----------------------------|
 | 0      | Early - 60 days          | 419                     | 49.53%                      |
@@ -87,17 +87,17 @@ From the table above we can see which gender booked the most reservations for ea
 | 0      | Suite Offer              | 10                      | 1.18%                       |
 | 0      | Min 5 nights             | 3                       | 0.35%                       |
 
-- **Number of Reservations:** 846 (33.83%)
+- Number of Reservations: 846 (33.83%)
 
 Top 3 booking rates:
 
-- **Early - 60 days (49.53%)**
-- **Fully Flexible  (27.07%)**
-- **Early - 21 days (12.41%)**
+- Early - 60 days (49.53%)
+- Fully Flexible  (27.07%)
+- Early - 21 days (12.41%)
 
 Almost two out of every three reservations made by gender 0 are using 'Early' booking rates. This shows a tendency to plan ahead in order to get more affordable rates, indicating they are most likely price conscious (high price elasticity). Be that as it may, a significant portion of this group also enjoys flexibility and is willing to pay for it. Overall, dispersion is low, with most of the bookings focused on these three rates.
 
-#### **Gender 1:**
+#### Gender 1:
 | Gender | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |--------|--------------------------|-------------------------|-----------------------------|
 | 1      | Fully Flexible           | 753                     | 58.15%                      |
@@ -110,17 +110,17 @@ Almost two out of every three reservations made by gender 0 are using 'Early' bo
 | 1      | Suite Offer              | 9                       | 0.69%                       |
 | 1      | Min 5 nights             | 4                       | 0.31%                       |
 
-- **Number of Reservations:** 1295 (51.78%)
+- Number of Reservations: 1295 (51.78%)
 
 Top 3 booking rates:
 
-- **Fully Flexible  (58.15%)**
-- **Early - 60 days (12.74%)**
-- **Early - 21 days (10.58%)**
+- Fully Flexible  (58.15%)
+- Early - 60 days (12.74%)
+- Early - 21 days (10.58%)
 
-This group values flexibility the most, with about three out of five opting for full flexibility, meaning that they tend to prefer peace of mind in exchange for a higher rate. About one in four, however, does take advantage of lower rates by planning their reservation in advance. Additionally, almost one in ten enjoys non-refundable offers, indicating lower risk aversion than gender 0.
+In this group, about three out of five opt for full flexibility, meaning that they tend to prefer peace of mind in exchange for a higher price. About one in four, however, does take advantage of lower rates by planning their reservation in advance. Additionally, almost one in ten enjoys non-refundable offers, indicating lower risk aversion than gender 0.
 
-#### **Gender 2:**
+#### Gender 2:
 | Gender | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |--------|--------------------------|-------------------------|-----------------------------|
 | 2      | Fully Flexible           | 169                     | 46.94%                      |
@@ -133,32 +133,32 @@ This group values flexibility the most, with about three out of five opting for 
 | 2      | Direct Booking           | 9                       | 2.50%                       |
 | 2      | Min 5 nights             | 2                       | 0.56%                       |
 
-- **Number of Reservations:** 360 (14.39%)
+- Number of Reservations: 360 (14.39%)
 
 Top 3 booking rates:
 
-- **Fully Flexible  (46.94%)**
-- **Non Refundable BAR BB (18.33%)**
-- **Early - 21 days (12.50%)**
+- Fully Flexible  (46.94%)
+- Non Refundable BAR BB (18.33%)
+- Early - 21 days (12.50%)
 
-Gender 2 mainly prefers flexibility, with close to one in two choosing 'Fully Flexible' booking rate. They have the highest usage of non-refundable rates, with almost one in five choosing to take a risk in exchange for a better rate, indicating the lowest risk aversion of any gender. Additionally, a significant portion (18.06%) chooses 'Early' rates as a way to enjoy cheaper prices. In conjunction, 36.39% of guests in this group opt for rates that would lower the price of the reservation. Finally, we also notice that this gender has the highest participation of the 'Suite Offer' rate out of any other, with 3.33%.
+Gender 2 mainly prefers flexibility, with close to one in two choosing 'Fully Flexible' booking rate. They have the highest usage of non-refundable rates, with almost one in five choosing to take a risk in exchange for a better rate, showing the lowest risk aversion of any gender. Additionally, a significant portion (18.06%) chooses 'Early' rates as a way to enjoy cheaper prices. In conjunction, 36.39% of guests in this group opt for rates that would lower the price of the reservation. Finally, we also notice that this gender has the highest participation of the 'Suite Offer' rate out of any other, with 3.33%.
 
-#### **Summary of Booking Trends by Gender**
+#### Summary of Booking Trends by Gender
 
 When comparing booking preferences across gender categories, clear differences emerge in rate selection, risk tolerance, and pricing sensitivity.
 
-- **Fully Flexible rates** are the most popular choice overall, but their adoption varies significantly across genders. **Gender 1 leads with 58.15%** of reservations made under this option, indicating a strong preference for peace of mind and adaptability. **Gender 2 follows with 46.94%**, and **Gender 0 has the lowest preference at 27.07%**, suggesting that flexibility is a lower priority for them, possibly due to cost considerations.
+- Fully Flexible rates are the most popular choice overall, but their adoption varies significantly across genders. Gender 1 leads with 58.15% of reservations made under this option, indicating a strong preference for peace of mind and adaptability. Gender 2 follows with 46.94%, and Gender 0 has the lowest preference at 27.07%, suggesting that flexibility is a lower priority for them, possibly due to cost considerations.
 
-- **Early booking rates** are most popular among **Gender 0**, where **over 61.94%** of reservations are made using either the "Early - 60 days" or "Early - 21 days" options. This highlights a strong tendency toward early planning and **high price sensitivity**. Gender 1 also makes some use of early rates (23.32% combined), while Gender 2 shows the least reliance on them (18.06%), favoring other strategies to manage price.
+- Early booking rates are most popular among Gender 0, with over 61.94% of reservations made using either the "Early - 60 days" or "Early - 21 days" options. This highlights a strong tendency toward early planning and high price sensitivity. Gender 1 also makes some use of early rates (23.32% combined), while Gender 2 shows the least reliance on them (18.06%), favoring other strategies to manage price.
 
-- **Non-Refundable rates** show an inverse trend compared to flexibility. **Gender 2 leads with 18.33%** of reservations under this option, showing the **lowest risk aversion** and highest willingness to exchange flexibility for discounts. Gender 1 follows at 9.5%, and Gender 0 has the lowest proportion, further confirming their preference for planned, lower-risk bookings.
+- Non-Refundable rates show an inverse trend compared to flexibility. Gender 2 leads with 18.33% of reservations under this option, showing the lowest risk aversion and highest willingness to exchange flexibility for discounts. Gender 1 follows at 9.5%, and Gender 0 has the lowest proportion, further confirming their preference for planned, lower-risk bookings.
 
-- **Rate dispersion** is lowest in Gender 0, where bookings are heavily concentrated in early rates. Gender 1, despite favoring flexibility, shows moderate dispersion, with some usage of non-refundable and early options. Gender 2, however, exhibits **the most diversified rate usage**, with higher-than-average adoption of non-refundable, suite offers, and minimum nights options, pointing to **a more dynamic booking behavior**.
+- Rate dispersion is lowest in Gender 0, where bookings are heavily concentrated in early rates. Gender 1, despite favoring flexibility, shows moderate dispersion, with some usage of non-refundable and early options. Gender 2, however, exhibits the most diversified rate usage, with higher-than-average adoption of non-refundable, suite offers, and minimum nights options, pointing to a more dynamic booking behavior.
 
 In summary:
-- **Gender 0** behaves like strategic planners — price-conscious, early-booking oriented, and relatively risk-averse.
-- **Gender 1** prioritizes **flexibility**, willing to pay a premium for peace of mind, but still considers early savings.
-- **Gender 2** exhibits the varied booking profile, combining flexibility with opportunistic rate exploitation, including the highest share of non-refundable and suite bookings.
+- Gender 0 behaves like strategic planners — price-conscious, early-booking oriented, and relatively risk-averse.
+- Gender 1 prioritizes flexibility, willing to pay a premium for peace of mind, but still considers early savings.
+- Gender 2 exhibits the varied booking profile, combining flexibility with opportunistic rate exploitation, including the highest share of non-refundable and suite bookings.
 
 ---
 
@@ -176,9 +176,9 @@ In summary:
 | 0         | Suite Offer            | 11                      |
 | 0         | Min 5 nights           | 3                       |
 
-As in the case for gender, here we can also see the top age groups per booking rate. It is not surprising age group 0 is leading in almost all booking rates if this group acts like a 'null' or 'other' for this segment, effectively catching all reservations with no age group. To gain more insights into the trends of each group, let's break down the analysis:
+As with gender, we can also see the top age groups per booking rate. It is not surprising that age group 0 leads in almost all booking rates, as this group acts like a 'null' or 'other' category for this segment, capturing all reservations without a specified age group. To gain more insights into the trends of each group, let's break down the analysis::
 
-#### **Age Group 0:**
+#### Age Group 0:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -192,17 +192,17 @@ As in the case for gender, here we can also see the top age groups per booking r
 | 0         | Suite Offer              | 11                      | 0.72%                       |
 | 0         | Min 5 nights             | 3                       | 0.20%                       |
 
-- **Number of Reservations:** 1520 (60.78%)
+- Number of Reservations: 1520 (60.78%)
 
 Top 3 booking rates:
 
-- **Fully Flexible (43.55%)**
-- **Early - 60 days  (35.46%)**
-- **Early - 21 days (12.76%)**
+- Fully Flexible (43.55%)
+- Early - 60 days  (35.46%)
+- Early - 21 days (12.76%)
 
-Age group 0 booking rate preferences have low dispersion. 91.77% of all reservations are made using the top three rates listed above. Even though 'Fully Flexible' rate accounts for the mayority of the mayority of reservations, 'Early' rates, when considered in conjunction compose a 48.22% of bookings. This indicates that this group tends to enjoy lower rates by early planning. When they don't, they opt for peace of mind despite the higher cost.
+Age group 0 booking rate preferences have low dispersion. 91.77% of all reservations are made using the top three rates listed above. Even though 'Fully Flexible' rate accounts for the majority of reservations, 'Early' rates, when considered in conjunction, compose a 48.22% of bookings. This indicates that this group tends to enjoy lower rates by early planning. When they don't, they opt for peace of mind despite the higher cost.
 
-#### **Age Group 25:**
+#### Age Group 25:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -217,17 +217,17 @@ Age group 0 booking rate preferences have low dispersion. 91.77% of all reservat
 | 25        | Min 5 nights             | 2                       | 0.85%                       |
 
 
-- **Number of Reservations:** 234 (9.36%)
+- Number of Reservations: 234 (9.36%)
 
 Top 3 booking rates:
 
-- **Fully Flexible (44.02%)**
-- **Non Refundable BAR BB (24.36%)**
-- **Early - 21 days (12.39%)**
+- Fully Flexible (44.02%)
+- Non Refundable BAR BB (24.36%)
+- Early - 21 days (12.39%)
 
 This group values flexibility the most, with almost one in five opting for flexibility despite the higher average reservation cost. Additionally, one in four opts for a non-refundable rate, indicating a low risk aversion. About 15% takes advantage of 'Early' booking rates to enjoy lower prices. General booking behaviour is similar to age group 0, but with slightly higher dispersion, with more than 10% of bookings being made using 'minimum nights' rates.
 
-#### **Age Group 35:**
+#### Age Group 35:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -241,17 +241,17 @@ This group values flexibility the most, with almost one in five opting for flexi
 | 35        | Suite Offer              | 4                       | 1.43%                       |
 | 35        | Min 5 nights             | 1                       | 0.36%                       |
 
-- **Number of Reservations:** 279 (11.16%)
+- Number of Reservations: 279 (11.16%)
 
 Top 3 booking rates:
 
-- **Fully Flexible (50.90%)**
-- **Non Refundable BAR BB (20.43%)**
-- **Early - 21 days (11.83%)**
+- Fully Flexible (50.90%)
+- Non Refundable BAR BB (20.43%)
+- Early - 21 days (11.83%)
 
 Slightly more than half of all reservations in this group are made with a fully flexible rate, showing a strong preference for flexibility. However, one in five guests still opts for non-refundable options, indicating some price sensitivity. Combined, early rates are used in nearly 17% of bookings, showing some planning ahead as well.
 
-#### **Age Group 45:**
+#### Age Group 45:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -266,17 +266,17 @@ Slightly more than half of all reservations in this group are made with a fully 
 | 45        | Min 5 nights             | 2                       | 0.83%                       |
 
 
-- **Number of Reservations:** 241 (9.64%)
+- Number of Reservations: 241 (9.64%)
 
 Top 3 booking rates:
 
-- **Fully Flexible (52.70%)**
-- **Non Refundable BAR BB (17.01%)**
-- **Early - 21 days (11.20%)**
+- Fully Flexible (52.70%)
+- Non Refundable BAR BB (17.01%)
+- Early - 21 days (11.20%)
 
 This group shows the highest preference for fully flexible rates among all age brackets, with over half choosing this option. The rest of the distribution is modestly spread between non-refundable and early rates, indicating a moderate mix of planning and cost-saving strategies, but an overall lean toward low-risk choices.
 
-#### **Age Group 55:**
+#### Age Group 55:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -290,17 +290,17 @@ This group shows the highest preference for fully flexible rates among all age b
 | 55        | Early - 60 days          | 3                       | 2.05%                       |
 
 
-- **Number of Reservations:** 146 (5.74%)
+- Number of Reservations: 146 (5.74%)
 
 Top 3 booking rates:
 
-- **Fully Flexible (53.42%)**
-- **Non Refundable BAR BB (13.01%)**
-- **Early - 21 days (12.33%)**
+- Fully Flexible (53.42%)
+- Non Refundable BAR BB (13.01%)
+- Early - 21 days (12.33%)
 
 A majority in this age group prefers fully flexible bookings. Early rates and non-refundable bookings are almost equally popular, suggesting this group occasionally seeks out lower prices through early commitments but still leans toward flexibility and reliability. The overall rate distribution is consistent with age group 45.
 
-#### **Age Group 65:**
+#### Age Group 65:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -313,17 +313,17 @@ A majority in this age group prefers fully flexible bookings. Early rates and no
 | 65        | Min 5 nights             | 1                       | 1.54%                       |
 
 
-- **Number of Reservations:** 65 (2.69%)
+- Number of Reservations: 65 (2.69%)
 
 Top 3 booking rates:
 
-- **Fully Flexible (55.38%)**
-- **Non Refundable BAR BB (13.85%)**
-- **Early - 21 days (12.31%)**
+- Fully Flexible (55.38%)
+- Non Refundable BAR BB (13.85%)
+- Early - 21 days (12.31%)
 
 With over 55% opting for fully flexible rates, this group shows the strongest tendency toward risk-averse booking behavior. Early and non-refundable bookings together form just over a quarter of total reservations. The preferences suggest a prioritization of convenience and adaptability over cost savings.
 
-#### **Age Group 100:**
+#### Age Group 100:
 
 | Age Group | Booking Rate             | Number of Reservations | Relative % of Reservations |
 |-----------|--------------------------|-------------------------|-----------------------------|
@@ -334,27 +334,27 @@ With over 55% opting for fully flexible rates, this group shows the strongest te
 | 100       | Suite Offer              | 1                       | 6.25%                       |
 
 
-**Number of Reservations:** 16 (0.63%)
+Number of Reservations: 16 (0.63%)
 
 Top 3 booking rates:
 
-- **Early - 21 days (37.50%)**
-- **Early - 60 days (25.00%)**
-- **Fully Flexible (18.75%)**
+- Early - 21 days (37.50%)
+- Early - 60 days (25.00%)
+- Fully Flexible (18.75%)
 
-This group's booking behavior contrasts sharply with others. Over 60% of reservations fall under early rates, highlighting a highly proactive and cost-saving approach. Flexible rates rank third, suggesting that peace of mind is still a factor, though less prioritized. This age group appears to be the most forward-planning of all. Be that as it may, due to the low sample size, these results should not be taken as a certaininty as they are not statistically significant.
+This group's booking behavior contrasts sharply with others. Over 60% of reservations fall under early rates, highlighting a highly proactive and cost-saving approach. Flexible rates rank third, suggesting that peace of mind is still a factor, though less prioritized. This age group appears to be the most forward-planning of all. Be that as it may, due to the low sample size, these results should not be taken as a certainty as they are not statistically significant.
 
 #### Summary of Booking Trends by Age Group
 
 Analyzing booking behaviors across age groups reveals clear patterns in rate preferences that offer insight into how planning habits, risk tolerance, and flexibility needs vary with age.
 
-- **Fully Flexible rates** are the dominant choice across all age groups, with their popularity **increasing steadily with age**. While age group 0 (younger travelers) already show a strong preference (43.55%), this grows consistently through age groups 25 to 65, peaking at **55.38% for the 65+ group**. This suggests that **older travelers prioritize flexibility and peace of mind**, likely valuing the ability to change or cancel plans more than younger travelers.
+- Fully Flexible rates are the dominant choice across all age groups, with their popularity increasing steadily with age. While age group 0 (younger travelers) already show a strong preference (43.55%), this grows consistently through age groups 25 to 65, peaking at 55.38% for the 65+ group. This suggests that older travelers prioritize flexibility and peace of mind, likely valuing the ability to change or cancel plans more than younger travelers.
 
-- **Non-Refundable rates** tell a different story. They **peak among younger adults**, particularly in age groups **25 (24.36%)** and **35 (20.43%)**, and then gradually decline as age increases — dropping to just **13.01% at age 55** and **13.85% at age 65**. This reflects a **higher risk tolerance and cost-consciousness** among younger travelers, who may be more willing to trade flexibility for savings.
+- Non-Refundable rates tell a different story. They peak among younger adults, particularly in age groups 25 (24.36%) and 35 (20.43%), and then gradually decline as age increases — dropping to just 13.01% at age 55 and 13.85% at age 65. This reflects a higher risk tolerance and cost-consciousness among younger travelers, who may be more willing to trade flexibility for savings.
 
-- **Early booking rates** (both “Early - 21 days” and “Early - 60 days”) have their **strongest presence in the youngest group (age 0)**, accounting for a combined **48.22% of all bookings**. This demonstrates proactive planning, potentially by families or budget-conscious younger adults. In contrast, middle-aged groups tend to use early rates less, focusing more on flexibility or non-refundable deals.
+- Early booking rates (both “Early - 21 days” and “Early - 60 days”) have their strongest presence in the youngest group (age 0), accounting for a combined 48.22% of all bookings. This demonstrates proactive planning, potentially by families or budget-conscious younger adults. In contrast, middle-aged groups tend to use early rates less, focusing more on flexibility or non-refundable deals.
 
-- **Booking dispersion** is lowest in age group 0, where over **91% of bookings fall under the top three rate types**, and **diversifies slightly with age**, with more varied use of niche rate types like “Min nights” or “Suite Offers” in older groups. However, even with this added variation, the top three rates still dominate across all groups.
+- Booking dispersion is lowest in age group 0, where over 91% of bookings fall under the top three rate types, and diversifies slightly with age, with more varied use of niche rate types like “Min nights” or “Suite Offers” in older groups. However, even with this added variation, the top three rates still dominate across all groups.
 
 ---
 
@@ -398,7 +398,7 @@ Analyzing booking behaviors across age groups reveals clear patterns in rate pre
 
 ---
 
-## Online Check-In Analyis
+## Online Check-In Analysis
 
 ### By Gender
 
@@ -410,7 +410,7 @@ Analyzing booking behaviors across age groups reveals clear patterns in rate pre
 
 Gender 1 has the highest use of online check-in, with almost 1 in 10 leveraging it, quickly followed by gender 2. Even though gender 0 makes 33.83% of total reservations, they do not participate at all in online check-ins. This case seems like an outlier that would require further investigation.
 
-Now let's take a look at a breakdown of online check in behaviour depending on which week day the reservation was created at:
+Now let's take a look at a breakdown of online check-in behaviour depending on which week day the reservation was created at:
 
 | Weekday   | Gender | Total Reservations | Online Check-ins | % Online Check-in |
 |-----------|--------|--------------------|------------------|--------------------|
@@ -449,15 +449,15 @@ Overall, the guests who typically do online check-ins are primarily from the fol
 
 Here is breakdown of the highest engagement by week day:
 
-| **Weekday**   | **Highest Online Check-in Age Group** | **Check-in %** |
+| Weekday   | Highest Online Check-in Age Group | Check-in % |
 |---------------|----------------------------------------|----------------|
-| **Monday**    | 35                          | 21.57%         |
-| **Tuesday**   | 55                          | 23.81%         |
-| **Wednesday** | 55                         | 30.00%         |
-| **Thursday**  | 55                         | 18.75%         |
-| **Friday**    | 45                         | 17.14%         |
-| **Saturday**  | 55                         | 30.00%         |
-| **Sunday**    | 55                         | 28.57%         |
+| Monday    | 35                          | 21.57%         |
+| Tuesday   | 55                          | 23.81%         |
+| Wednesday | 55                         | 30.00%         |
+| Thursday  | 55                         | 18.75%         |
+| Friday    | 45                         | 17.14%         |
+| Saturday  | 55                         | 30.00%         |
+| Sunday    | 55                         | 28.57%         |
 
 In summary, here is what behaviour we can observe when analyzing online check-in participation by week day and age group:
 
@@ -471,7 +471,7 @@ In summary, here is what behaviour we can observe when analyzing online check-in
 
 - There's a clear trend that guests who book on the weekend (Saturday and Sunday) tend to engage more with online check-ins compared to those booking on Friday or Monday.
 
-- Age group 45 has high engagement with online check-in all throughout the weekend im comparison to the rest of the week.
+- Age group 45 has high engagement with online check-in all throughout the weekend in comparison to the rest of the week.
 
 ---
 
@@ -498,9 +498,9 @@ In this case, we have insufficient data to make a determination if countries beh
 
 ## Profitability Analysis by Customer Segment
 
-To calculate average night revenue per unit capacity, we have obtained the cost per night for each reservation and divided that about by the amount of rooms in the reservation. Then depending which group we are taking a look at, we take the corresponding average of the night cost per unit capacity. This is done for reservations that have been cancelled, as these are realized into revenue.
+To calculate average night revenue per unit capacity, we have obtained the cost per night for each reservation and divided that by the amount of space capacity (beds) in the reservation. Then depending which group we are taking a look at, we take the corresponding average of the night cost per unit capacity. This is done for reservations that have not been cancelled, as these are realized into revenue.
 
-$$ \text{average night cost per unit capacity} = \frac{1}{n} \sum^n \left( \frac{\text{reservation cost}}{\text{number of nights}} \times \frac{1}{\text{room capacity}} \right) $$
+$$ \text{average night cost per unit capacity} = \frac{1}{n} \sum^n \left( \frac{\text{reservation cost}}{\text{number of nights}} \times \frac{1}{\text{space capacity}} \right) $$
 
 Here is the breakdown per segment of the most profitable and least profitable:
 
