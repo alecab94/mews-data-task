@@ -176,7 +176,7 @@ In summary:
 | 0         | Suite Offer            | 11                      |
 | 0         | Min 5 nights           | 3                       |
 
-As with gender, we can also see the top age groups per booking rate. It is not surprising that age group 0 leads in almost all booking rates, as this group acts like a 'null' or 'other' category for this segment, capturing all reservations without a specified age group. To gain more insights into the trends of each group, let's break down the analysis::
+As with gender, we can also see the top age groups per booking rate. It is not surprising that age group 0 leads in almost all booking rates, as this group acts like a 'null' or 'other' category for this segment, capturing all reservations without a specified age group. To gain more insights into the trends of each group, let's break down the analysis:
 
 #### Age Group 0:
 
@@ -225,7 +225,7 @@ Top 3 booking rates:
 - Non Refundable BAR BB (24.36%)
 - Early - 21 days (12.39%)
 
-This group values flexibility the most, with almost one in five opting for flexibility despite the higher average reservation cost. Additionally, one in four opts for a non-refundable rate, indicating a low risk aversion. About 15% takes advantage of 'Early' booking rates to enjoy lower prices. General booking behaviour is similar to age group 0, but with slightly higher dispersion, with more than 10% of bookings being made using 'minimum nights' rates.
+This group values flexibility the most, with almost one in five opting for flexibility despite the higher average reservation cost. Additionally, one in four opts for a non-refundable rate, indicating a low risk aversion. About 15% take advantage of 'Early' booking rates to enjoy lower prices. General booking behaviour is similar to age group 0, but with slightly higher dispersion, with more than 10% of bookings made using 'minimum nights' rates.
 
 #### Age Group 35:
 
@@ -249,7 +249,7 @@ Top 3 booking rates:
 - Non Refundable BAR BB (20.43%)
 - Early - 21 days (11.83%)
 
-Slightly more than half of all reservations in this group are made with a fully flexible rate, showing a strong preference for flexibility. However, one in five guests still opts for non-refundable options, indicating some price sensitivity. Combined, early rates are used in nearly 17% of bookings, showing some planning ahead as well.
+Slightly more than half of all reservations in this group are made with a fully flexible rate, demonstrating a strong preference for flexibility. However, one in five guests still opts for non-refundable options, indicating some price sensitivity. Combined, early rates are used in nearly 17% of bookings, suggesting some planning ahead as well.
 
 #### Age Group 45:
 
@@ -385,7 +385,7 @@ Analyzing booking behaviors across age groups reveals clear patterns in rate pre
 | US          | Early - 21 days           | 35                      | 14.40                                      |
 
 
-- Fully Flexible is the most preferred rate overall, ranking first for every nationality listed. Its adoption is especially dominant in Czech Republic (CZ - 76.12%), Germany (DE - 71.43%), and Great Britain (GB - 65.24%), reflecting a strong preference for flexibility and peace of mind. This trend suggests that European guests generally prioritize adaptable plans over cost savings.
+- Fully Flexible is the most preferred rate overall, ranking first for every nationality listed. Its adoption is especially dominant in the Czech Republic (CZ - 76.12%), Germany (DE - 71.43%), and Great Britain (GB - 65.24%), reflecting a strong preference for flexibility and peace of mind. This trend suggests that European guests generally prioritize adaptable plans over cost savings.
 
 - Early Booking Rates (either "Early - 21 days" or "Early - 60 days") show meaningful usage across China (CN), Germany (DE), Great Britain (GB), Slovakia (SK), and the United States (US). Notably, Chinese guests allocate over 30% of their bookings to "Early - 21 days", indicating high planning behavior and price consciousness.
 
@@ -488,7 +488,7 @@ In summary, here is what behaviour we can observe when analyzing online check-in
 | SK          | 72                 | 2                | 2.78%              |
 | CN          | 59                 | 0                | 0.00%              |
 
-RU, GB and US lead the use of online check-in by nationality with about 1 in 10 guests making use of it. CZ, DE, and SK, show decreasing online check-in participation correspondingly, all of which belong to Central Europe. China on the other hand does not participate at all in online check-ins. This may be to country or system limitations, would require further investigation.
+RU, GB and US lead the use of online check-in by nationality with about 1 in 10 guests making use of it. CZ, DE, and SK, show decreasing online check-in participation correspondingly, all of which belong to Central Europe. China on the other hand does not participate at all in online check-ins. This may be due to country or system restrictions, and would require further investigation.
 
 In this case, we have insufficient data to make a determination if countries behave in a different manner when it comes to the use of online check-in for different week days. The highest number of online check-in is on Mondays for GB and that is just 6 reservations.
 
@@ -498,7 +498,7 @@ In this case, we have insufficient data to make a determination if countries beh
 
 ## Profitability Analysis by Customer Segment
 
-To calculate average night revenue per unit capacity, we have obtained the cost per night for each reservation and divided that by the amount of space capacity (beds) in the reservation. Then depending which group we are taking a look at, we take the corresponding average of the night cost per unit capacity. This is done for reservations that have not been cancelled, as these are realized into revenue.
+To calculate average night revenue per unit capacity, we first determine the cost per night for each reservation and divid that by the amount of space capacity (beds) in the reservation. Then, depending on the group being analyzed, we caclulate the corresponding average of the night cost per unit capacity. This excludes cancelled reservations, as these are not converted into revenue.
 
 $$ \text{average night cost per unit capacity} = \frac{1}{n} \sum^n \left( \frac{\text{reservation cost}}{\text{number of nights}} \times \frac{1}{\text{space capacity}} \right) $$
 
