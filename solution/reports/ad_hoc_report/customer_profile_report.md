@@ -176,7 +176,7 @@ In summary:
 | 0         | Suite Offer            | 11                      |
 | 0         | Min 5 nights           | 3                       |
 
-As in the case for gender, here we can also see the top age groups per booking rate. It is not surprising age group 0 is leading in almsot all booking rates if this group acts like a 'null' or 'other' for this segment, catching all reservations with no age group. To gain more insights into the trends of each group, let's break down the analysis:
+As in the case for gender, here we can also see the top age groups per booking rate. It is not surprising age group 0 is leading in almost all booking rates if this group acts like a 'null' or 'other' for this segment, effectively catching all reservations with no age group. To gain more insights into the trends of each group, let's break down the analysis:
 
 #### **Age Group 0:**
 
@@ -249,7 +249,7 @@ Top 3 booking rates:
 - **Non Refundable BAR BB (20.43%)**
 - **Early - 21 days (11.83%)**
 
-Slightly more than half of all reservations in this group are made with a fully flexible rate, showing a strong preference for flexibility. However, one in five guests still opts for non-refundable options, indicating price sensitivity. Combined, early rates are used in nearly 17% of bookings, showing some planning ahead.
+Slightly more than half of all reservations in this group are made with a fully flexible rate, showing a strong preference for flexibility. However, one in five guests still opts for non-refundable options, indicating some price sensitivity. Combined, early rates are used in nearly 17% of bookings, showing some planning ahead as well.
 
 #### **Age Group 45:**
 
@@ -342,7 +342,7 @@ Top 3 booking rates:
 - **Early - 60 days (25.00%)**
 - **Fully Flexible (18.75%)**
 
-This group's booking behavior contrasts sharply with others. Over 60% of reservations fall under early rates, highlighting a highly proactive and cost-saving approach. Flexible rates rank third, suggesting that peace of mind is still a factor, though less prioritized.This age group appears to be the most forward-planning of all. Be that as it may, due to the low sample size, these results should not be taken as a certaininty as they are not statistically significant.
+This group's booking behavior contrasts sharply with others. Over 60% of reservations fall under early rates, highlighting a highly proactive and cost-saving approach. Flexible rates rank third, suggesting that peace of mind is still a factor, though less prioritized. This age group appears to be the most forward-planning of all. Be that as it may, due to the low sample size, these results should not be taken as a certaininty as they are not statistically significant.
 
 #### Summary of Booking Trends by Age Group
 
@@ -410,7 +410,7 @@ Analyzing booking behaviors across age groups reveals clear patterns in rate pre
 
 Gender 1 has the highest use of online check-in, with almost 1 in 10 leveraging it, quickly followed by gender 2. Even though gender 0 makes 33.83% of total reservations, they do not participate at all in online check-ins. This case seems like an outlier that would require further investigation.
 
-Now let's take a look at a breakdown of online check in behaviour by reservation creation week day:
+Now let's take a look at a breakdown of online check in behaviour depending on which week day the reservation was created at:
 
 | Weekday   | Gender | Total Reservations | Online Check-ins | % Online Check-in |
 |-----------|--------|--------------------|------------------|--------------------|
@@ -447,7 +447,7 @@ Overall, the guests who typically do online check-ins are primarily from the fol
 - 45 (14.52%)
 - 25 (13.68%)
 
-If we look at a breakdown of the highest engagement by week day:
+Here is breakdown of the highest engagement by week day:
 
 | **Weekday**   | **Highest Online Check-in Age Group** | **Check-in %** |
 |---------------|----------------------------------------|----------------|
@@ -459,28 +459,19 @@ If we look at a breakdown of the highest engagement by week day:
 | **Saturday**  | 55                         | 30.00%         |
 | **Sunday**    | 55                         | 28.57%         |
 
+In summary, here is what behaviour we can observe when analyzing online check-in participation by week day and age group:
 
-Weekend (Saturday & Sunday):
+- Overall all age groups have high engagement with online check-in during Saturdays.
 
-- Older adults (55) are consistently among the highest adopters.
+- Younger guests in age group 25 are more likely (1 in 4) to use online check-in if they create their reservation on Saturdays.
 
-- Noticeably higher online check-in rates overall (25%–30%).
+- Age group 35 has higher engagement on Mondays than usual compared to other age groups.
 
-Weekdays (Monday–Friday):
+- Age group 55 has a bimodal engagement profile as the week progresses, with a peak of 23.81% on Tuesday, a minim of 3.85% on Friday and another peak of 30% on Saturday.
 
-- Highest adoption among middle-aged adults (35–55 years old), but generally lower than weekends, except Wednesday.
+- There's a clear trend that guests who book on the weekend (Saturday and Sunday) tend to engage more with online check-ins compared to those booking on Friday or Monday.
 
-- Wednesday shows an unusual spike in activity for older age groups.
-
-Age-Related Behavior:
-- Younger adults (25 and 35) show moderate online check-in behavior throughout the week, with peaks notably on weekends (especially Saturday).
-
-- Older adults (55) consistently lead in adopting online check-in, particularly over the weekend and Wednesday.
-
-- These four age groups account for the majority of online check-ins. Guests aged 65 and above show significantly lower engagement with online check-in. Age groups marked as 0 and 100 are not engaging in online check-in at all.
-
-Online Check-In participation in Age Group 25 reaches a maximum on Saturdays, with 1 out of 4 reservations created that day having online check-in.
-
+- Age group 45 has high engagement with online check-in all throughout the weekend im comparison to the rest of the week.
 
 ---
 
@@ -511,7 +502,7 @@ To calculate average night revenue per unit capacity, we have obtained the cost 
 
 $$ \text{average night cost per unit capacity} = \frac{1}{n} \sum^n \left( \frac{\text{reservation cost}}{\text{number of nights}} \times \frac{1}{\text{room capacity}} \right) $$
 
-Here is the breakdown per segment:
+Here is the breakdown per segment of the most profitable and least profitable:
 
 | Gender | Avg. Night Revenue per Unit Capacity |
 |--------|--------------------------------------|
