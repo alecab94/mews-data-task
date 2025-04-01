@@ -28,21 +28,15 @@ The project is divided into an assignment folder with all the necessary instruct
 
 ### Step 1: Clone the Repository
 
-First, clone the repository by running:
+First, clone the repository in the desired folder by running:
 
 ```bash
 git clone https://github.com/alecab94/mews-data-task
 ```
 
-### Step 2: Navigate to the solution directory
+### Step 2: Build the Docker Image
 
-```bash
-cd solution/
-```
-
-### Step 3: Build the Docker Image
-
-From the solution directory, run:
+From the project root (mews-data-task/) directory, run:
 
 ```bash
 docker-compose up --build
@@ -50,21 +44,15 @@ docker-compose up --build
 
 This will create a Docker container with the Postgres database and the PgAdmin instance.
 
-### Step 4: Run models with dbt
+### Step 3: Create a virtual environment and install dependencies
 
-Navigate to the dbt project directory by running
-
-```bash
-cd dbt_project/
-```
-
-Then, create a virtual environment:
+In the project root directory, run the following command to create a virtual environment
 
 ```bash
 python3 -m venv venv
 ```
 
-and activate the virtual environment with:
+Then, activate the virtual environment with:
 
 ```bash
 source venv/bin/activate
@@ -76,7 +64,14 @@ Finally, install the required dependencies:
 pip install -r requirements.txt
 ```
 
-Now you can run `dbt debug` to test the connection to the database.
+### Step 4: Run dbt models
+
+First navigate to the dbt_project folder from the project root:
+
+```bash
+cd solution/dbt_project/
+```
+Now you can run `dbt debug` to test the connection to the database. Remember you must be connected to the virtual environment
 
 ### Optional: View the databse with pgadmin
 
