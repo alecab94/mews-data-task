@@ -1,3 +1,3 @@
 dbt-postgres
-pre-commit
+dbt-core
 sqlfluff

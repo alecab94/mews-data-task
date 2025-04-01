@@ -1,0 +1,45 @@
+version: 2
+
+models:
+  - name: mart_top_3_booking_rates_by_nationality
+    description: This table contains the top 3 booking rates by nationality.
+    config:
+      tags: ["aggregation", "ad-hoc report"]
+      contract: {enforced: true}
+    
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - nationality_code
+            - rate_name
+
+    columns:
+      - name: nationality_code
+        data_type: text
+        description: Nationality Code. 
+        data_tests:
+          - not_null
+
+      - name: rate_name
+        data_type: text
+        description: Full name of the booking rate.
+        data_tests:
+          - not_null
+
+      - name: number_of_reservations
+        data_type: bigint
+        description: Number of reservations
+        data_tests:
+          - not_null
+
+      - name: relative_pct_num_of_reservations_by_nationality_code
+        data_type: numeric
+        description: Relative percentage of reservations by nationality
+        data_tests:
+          - not_null
+
+      - name: rn
+        data_type: bigint
+        description: Ranking of number of reservations by booking rates by nationalities
+        data_tests:
+          - not_null

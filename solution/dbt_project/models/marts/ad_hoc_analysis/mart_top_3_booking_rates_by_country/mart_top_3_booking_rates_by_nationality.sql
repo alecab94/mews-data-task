@@ -1,5 +1,6 @@
 {% set reservation_limit = 50 %}
 {% set number_of_booking_rates = 3 %}
+
 with
 
 reservations_by_nationality as (

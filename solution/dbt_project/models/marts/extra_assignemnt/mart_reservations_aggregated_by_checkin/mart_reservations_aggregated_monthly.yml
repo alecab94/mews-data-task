@@ -1,0 +1,52 @@
+version: 2
+
+models:
+  - name: mart_reservations_aggregated_monthly
+    description: This model contains aggregated reservations by month, relevant with checkin-in information.  
+    config:
+      tags: ["aggregation", "pbi report"]
+      contract: {enforced: true}
+
+    columns:
+      - name: month_date
+        data_type: timestamp with time zone
+        description: Timestamp representing the month of aggregation.
+        data_tests:
+          - not_null
+          - unique
+
+      - name: total_reservations
+        data_type: bigint
+        description: Total reservations for the month
+        data_tests:
+          - not_null
+
+      - name: total_night_cost
+        data_type: double precision
+        description: Total reservation cost for the month
+        data_tests:
+          - not_null
+
+      - name: number_of_offline_checkin
+        data_type: bigint
+        description: Number of reservations with offline check-in in the month
+        data_tests:
+          - not_null
+
+      - name: total_cost_of_offline_checkin_reservations
+        data_type: numeric
+        description: Total cost of reservations with offline check-in in the month
+        data_tests:
+          - not_null
+
+      - name: number_of_online_checkin
+        data_type: bigint
+        description: Number of reservations with online check-in in the month
+        data_tests:
+          - not_null
+
+      - name: total_cost_of_online_checkin_reservations
+        data_type: numeric
+        description: Total cost of reservations with offline check-in in the month
+        data_tests:
+          - not_null

@@ -1,0 +1,55 @@
+version: 2
+
+models:
+  - name: mart_reservation_checkin_aggregated_by_nationality
+    description: This table contains aggregated data about check-in information from reservations by nationality and is used for the ad-hoc report.
+    config:
+      tags: ["aggregation", "ad-hoc report"]
+      contract: {enforced: true}
+
+    columns:
+      - name: nationality_code
+        data_type: text
+        description: Nationality being aggregated by
+        data_tests:
+          - unique
+
+      - name: total_reservations
+        data_type: bigint
+        description: Total reservations made by the nationality
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"    
+
+      - name: number_of_online_checkin
+        data_type: bigint
+        description: Number of reservations with online check-in
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"   
+
+      - name: pct_of_online_checkin
+        data_type: numeric
+        description: Relative percentage of online check-in use in the nationality.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"   
+
+      - name: number_of_offline_checkin
+        data_type: bigint
+        description: Number of reservations with offline check-in
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"   
+              
+      - name: pct_of_offline_checkin
+        data_type: numeric
+        description: Relative percentage of offline check-in use in the nationality.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"   

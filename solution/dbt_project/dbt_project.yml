@@ -30,10 +30,6 @@ seeds:
   dbt_project:
     +schema: seeds
 
-snapshots:
-  dbt_project:
-    +schema: snap
-
 data_tests:
   +store_failures: true
 

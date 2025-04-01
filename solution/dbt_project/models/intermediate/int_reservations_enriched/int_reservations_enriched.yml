@@ -1,109 +1,64 @@
 version: 2
 
 models:
-  - name: stg_reservations
-    description: >
-      This staging model casts and renames data coming from `seed_reservations`,
-      which contains transactional data of reservations made.
-
+  - name: int_reservations_enriched
+    description: This intermediate model contains reservation data enriched with booking rate information
     config:
       tags: ["transactional"]
       contract: {enforced: true}
-
-    data_tests:
-      - dbt_utils.expression_is_true:
-          expression: "start_datetime_utc < end_datetime_utc"
-      - dbt_utils.expression_is_true:
-          expression: "(DATE(creation_datetime_utc) - INTERVAL '1 DAY') <= DATE(start_datetime_utc)"
 
     columns:
       - name: start_datetime_utc
         data_type: timestamp with time zone
         description: The UTC start date and time of the reservation.
-        data_tests:
-          - not_null
 
       - name: end_datetime_utc
         data_type: timestamp with time zone
         description: The UTC end date and time of the reservation.
-        data_tests:
-          - not_null
 
       - name: creation_datetime_utc
         data_type: timestamp with time zone
         description: The UTC timestamp when the reservation was created.
-        data_tests:
-          - not_null
 
       - name: number_of_nights
         data_type: integer
         description: The total number of nights booked for the reservation.
-        data_tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              expression: "> 0"
 
       - name: total_night_cost
         data_type: double precision
         description: The total revenue generated from the room cost across all booked nights.
-        data_tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              expression: ">= 0"
 
       - name: total_space_capacity
         data_type: integer
         description: The aggregated capacity (number of beds) available in the reserved space.
-        data_tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              expression: "> 0"
-              config:
-                severity: warn
 
       - name: number_of_guests
         data_type: integer
         description: The total number of guests associated with the reservation.
-        data_tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              expression: "> 0"
 
       - name: lead_time_days
         data_type: integer
         description: The number of days between the booking date and the start of the reservation.
-        data_tests:
-          - not_null
 
       - name: stay_length_days
         data_type: integer
         description: The number of days that the reservation spans (length of stay).
-        data_tests:
-          - not_null
-          - dbt_utils.expression_is_true:
-              expression: ">= 0"
 
       - name: cancellation_reason
         data_type: integer
         description: An identifier for the reason a reservation was cancelled, if applicable.
-
+        
       - name: settlement_type
         data_type: integer
-        description: An identifier indicating the type of settlement associated with the reservation.
-        data_tests:
-          - not_null
+        description: NA
 
       - name: reservation_state
         data_type: integer
         description: An identifier representing the current state/status of the reservation.
-        data_tests:
-          - not_null
 
       - name: origin
         data_type: integer
         description: An identifier for the source/origin of the reservation.
-        data_tests:
-          - not_null
 
       - name: commander_origin
         data_type: integer
@@ -116,10 +71,6 @@ models:
       - name: is_online_checkin
         data_type: integer
         description: Indicates whether check-in was completed online (1 for true, 0 for false).
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [0, 1]
 
       - name: nationality_code
         data_type: text
@@ -128,10 +79,6 @@ models:
       - name: gender
         data_type: integer
         description: A numeric identifier representing the guest's gender.
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [0, 1, 2]
 
       - name: classification
         data_type: integer
@@ -140,24 +87,14 @@ models:
       - name: age_group
         data_type: integer
         description: The age group category of the guest who made the reservation.
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [0, 25, 35, 45, 55, 65, 100]
 
       - name: has_email
         data_type: integer
         description: A boolean flag (1 for yes, 0 for no) indicating if the guest provided an email address.
-        data_tests:
-          - not_null
-          - accepted_values:
-              values: [0, 1]
 
       - name: enterprise_time_zone
         data_type: integer
         description: An identifier for the enterprise timezone associated with the reservation.
-        data_tests:
-          - not_null
 
       - name: business_segment
         data_type: text
@@ -166,11 +103,46 @@ models:
       - name: tier
         data_type: integer
         description: An identifier for the reservation tier.
-        data_tests:
-          - not_null
 
       - name: rate_id
         data_type: text
         description: The unique identifier (UUID) for the rate applied to the reservation.
+
+      - name: cost_per_night
+        data_type: double precision
+        description: Cost of the reservation per night
         data_tests:
           - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: night_cost_per_unit_capacity
+        data_type: double precision
+        description: Cost of the reservation per night per bed in the space
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: space_occupancy_rate
+        data_type: numeric
+        description: Ratio between guests staying and capacity availiable in the space.
+        data_tests:
+          - not_null
+          - dbt_utils.expression_is_true:
+              expression: ">= 0"
+
+      - name: creation_week_day
+        data_type: text
+        description: Week day of the creation day of the reservation
+        data_tests:
+          - not_null
+
+      - name: rate_name
+        data_type: text
+        description: Full booking rate name.
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_rates')
+              field: rate_name

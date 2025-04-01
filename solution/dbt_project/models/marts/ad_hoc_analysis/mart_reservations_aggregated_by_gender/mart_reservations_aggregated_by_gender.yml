@@ -1,0 +1,105 @@
+version: 2
+
+models:
+  - name: mart_reservations_aggregated_by_gender
+    description: This model contains aggregated reservations by gender and booking rate.
+    config:
+      tags: ["aggregation", "ad-hoc report"]
+      contract: {enforced: true}
+
+    data_tests:
+      - dbt_utils.unique_combination_of_columns:
+          combination_of_columns:
+            - gender
+            - rate_name
+
+    columns:
+      - name: gender
+        data_type: integer
+        description: Gender being aggregated by 
+        data_tests:
+          - not_null
+
+      - name: rate_name
+        data_type: text
+        description: Full name of the booking rate.
+        data_tests:
+          - not_null
+
+      - name: number_of_reservations
+        data_type: bigint
+        description: Number of reservations made by this gender using this booking rate.
+        data_tests:
+          - not_null
+
+      - name: relative_pct_num_of_reservations_by_gender
+        data_type: numeric
+        description: Relative percentage by gender of reservations made using this booking rate.
+        data_tests:
+          - not_null
+
+      - name: number_of_nights
+        data_type: bigint
+        description: Number of nights stayed using this booking rate by this gender.
+        data_tests:
+          - not_null
+
+      - name: relative_pct_num_of_nights_by_gender
+        data_type: numeric
+        description: Relative percentage by gender of number of nights stayed using this booking rate.
+        data_tests:
+          - not_null
+
+      - name: total_night_cost
+        data_type: numeric
+        description: Total reservation cost of this gender for this booking rate
+        data_tests:
+          - not_null
+
+      - name: relative_pct_total_night_cost_by_gender
+        data_type: numeric
+        description: Relative percentage by gender of reservation cost using this booking rate.
+        data_tests:
+          - not_null
+
+      - name: avg_total_night_cost
+        data_type: numeric
+        description: Average reservation cost of this booking rate for this gender.
+        data_tests:
+          - not_null
+
+      - name: cost_per_night
+        data_type: numeric
+        description: Total reservation cost per night
+        data_tests:
+          - not_null
+
+      - name: avg_night_cost_per_unit_capacity
+        data_type: numeric
+        description: Average reservation cost per night per bed.
+        data_tests:
+          - not_null
+
+      - name: number_of_cancellations
+        data_type: bigint
+        description: Total number of cancellations.
+        data_tests:
+          - not_null
+
+      - name: avg_night_revenue_per_unit_capacity
+        data_type: numeric
+        description: Average revenue per night per bed.
+        data_tests:
+          - not_null
+
+      - name: number_of_online_checkin
+        data_type: bigint
+        description: Number of guests who used online checkin-in
+        data_tests:
+          - not_null
+
+      - name: relative_pct_of_online_checkin
+        data_type: numeric
+        description: Relative percentage of guests that used online check-in.
+        data_tests:
+          - not_null

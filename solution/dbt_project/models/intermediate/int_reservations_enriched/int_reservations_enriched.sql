@@ -1,4 +1,5 @@
 with
+
 reservations as (
     select
         start_datetime_utc,
@@ -47,7 +48,7 @@ calculate_reservation_metrics as (
         case
             when total_space_capacity = 0 then 1
             else ROUND(number_of_guests::numeric / total_space_capacity::numeric, 2)
-        end as occupancy_rate,
+        end as space_occupancy_rate,
         TRIM(TO_CHAR(creation_datetime_utc, 'Day')) as creation_week_day
     from reservations
 ),
