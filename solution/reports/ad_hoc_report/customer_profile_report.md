@@ -498,7 +498,7 @@ In this case, we have insufficient data to make a determination if countries beh
 
 ## Profitability Analysis by Customer Segment
 
-To calculate average night revenue per unit capacity, we first determine the cost per night for each reservation and divid that by the amount of space capacity (beds) in the reservation. Then, depending on the group being analyzed, we caclulate the corresponding average of the night cost per unit capacity. This excludes cancelled reservations, as these are not converted into revenue.
+To calculate average night revenue per unit capacity, we first determine the cost per night for each reservation and divide that by the amount of space capacity (beds) in the reservation. Then, depending on the group being analyzed, we caclulate the corresponding average of the night cost per unit capacity. This excludes cancelled reservations, as these are not converted into revenue.
 
 $$ \text{average night cost per unit capacity} = \frac{1}{n} \sum^n \left( \frac{\text{reservation cost}}{\text{number of nights}} \times \frac{1}{\text{space capacity}} \right) $$
 
