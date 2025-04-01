@@ -50,7 +50,7 @@ docker-compose up --build
 
 This will create a Docker container with the Postgres database and the PgAdmin instance.
 
-### Run models with dbt
+### Step 4: Run models with dbt
 
 Navigate to the dbt project directory by running
 
@@ -78,7 +78,7 @@ pip install -r requirements.txt
 
 Now you can run `dbt debug` to test the connection to the database.
 
-### View the databse with pgadmin
+### Optional: View the databse with pgadmin
 
 Once the container is up, you can access the postgres database using the the credentials and interface with it using pgadmin by opening [http://localhost:8081](http://localhost:8081) in your browser.
 

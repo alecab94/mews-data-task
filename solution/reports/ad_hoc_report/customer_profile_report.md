@@ -41,7 +41,7 @@ We will study each customer segment independently, given that the volume of data
 
 ### Definitions and Assumptions
 
-- To answer the first question, we must clearly identify what is meant by *popularity* and how can we best measure it. Since we only have a single data point per segment for each reservation, for the purposes of this report, it be measured by the number of reservations made by any given segment. More specifically, we will look at the relative percentage of reservations made by booking rate for each group in each segment. Alternatively, if we had acces to demographical information of each guest in the reservation, measuring popularity as 'Number of Reservations' times 'Number of Guests' would yield a larger sample size, which would increase the confidence in the results.
+- To answer the first question, we must clearly identify what is meant by *popularity* and how can we best measure it. Since we only have a single data point per segment for each reservation, for the purposes of this report, it will be measured by the number of reservations made by any given segment. More specifically, we will look at the relative percentage of reservations made by booking rate for each group in each segment. Alternatively, if we had acces to demographical information of each guest in the reservation, measuring popularity as 'Number of Reservations' times 'Number of Guests' would yield a larger sample size, which would increase the confidence in the results.
 
     Additionally, in this case, we will include all reservations in the analysis, even cancelled reservations. Given that we assume the interest to stay was present, but the reservation got cancelled due to an unforeseen event. That being said however, interest was established. Which could be argued that it counts towards contributing to popularity of a booking rate. Furthermore, it stands to reason that reservations under the Fully Flexible rate are highly impacted by cancellations. If we did not include cancellations, correctly gauging interest in preferences like flexibility would not be possible due to survivorship bias.
 
@@ -52,6 +52,8 @@ We will study each customer segment independently, given that the volume of data
 - In this dataset, some values for total space capacity are equal to 0. Whenever this happens, we will assume the total capacity of the space to be equal to the number of guests staying.
 
 - Regarding cancellation reason, we will assume that those reservations which have cancellation reason equal to null were not cancelled, and those with a value different than null (including 0) were cancelled.
+
+---
 
 ## Booking Rate Popularity by Segment
 
@@ -116,7 +118,7 @@ Top 3 booking rates:
 - **Early - 60 days (12.74%)**
 - **Early - 21 days (10.58%)**
 
-This group values flexibility the most, with about three out of five opting for full flexibility, meaning that they tend to prefer peace of mind higher in exchange for a higher rate. About one in four, however, does take advantage of lower rates by planning their reservation in advance. Additionally, almost one in ten enjoys non-refundable offers, indicating lower risk aversion than gender 0.
+This group values flexibility the most, with about three out of five opting for full flexibility, meaning that they tend to prefer peace of mind in exchange for a higher rate. About one in four, however, does take advantage of lower rates by planning their reservation in advance. Additionally, almost one in ten enjoys non-refundable offers, indicating lower risk aversion than gender 0.
 
 #### **Gender 2:**
 | Gender | Booking Rate             | Number of Reservations | Relative % of Reservations |
@@ -151,12 +153,14 @@ When comparing booking preferences across gender categories, clear differences e
 
 - **Non-Refundable rates** show an inverse trend compared to flexibility. **Gender 2 leads with 18.33%** of reservations under this option, showing the **lowest risk aversion** and highest willingness to exchange flexibility for discounts. Gender 1 follows at 9.5%, and Gender 0 has the lowest proportion, further confirming their preference for planned, lower-risk bookings.
 
-- **Rate dispersion** is lowest in Gender 0, where bookings are heavily concentrated in early rates. Gender 1, despite favoring flexibility, shows moderate dispersion, with some usage of non-refundable and early options. Gender 2, however, exhibits **the most diversified rate usage**, with higher-than-average adoption of non-refundable, suite offers, and minimum nights options, pointing to **a more dynamic or opportunistic booking behavior**.
+- **Rate dispersion** is lowest in Gender 0, where bookings are heavily concentrated in early rates. Gender 1, despite favoring flexibility, shows moderate dispersion, with some usage of non-refundable and early options. Gender 2, however, exhibits **the most diversified rate usage**, with higher-than-average adoption of non-refundable, suite offers, and minimum nights options, pointing to **a more dynamic booking behavior**.
 
 In summary:
 - **Gender 0** behaves like strategic planners — price-conscious, early-booking oriented, and relatively risk-averse.
 - **Gender 1** prioritizes **flexibility**, willing to pay a premium for peace of mind, but still considers early savings.
-- **Gender 2** exhibits the **most adventurous and varied** booking profile, combining flexibility with opportunistic rate exploitation, including **the highest share of non-refundable and suite bookings**.
+- **Gender 2** exhibits the varied booking profile, combining flexibility with opportunistic rate exploitation, including the highest share of non-refundable and suite bookings.
+
+---
 
 ### Age Group Based Analysis
 
@@ -352,6 +356,8 @@ Analyzing booking behaviors across age groups reveals clear patterns in rate pre
 
 - **Booking dispersion** is lowest in age group 0, where over **91% of bookings fall under the top three rate types**, and **diversifies slightly with age**, with more varied use of niche rate types like “Min nights” or “Suite Offers” in older groups. However, even with this added variation, the top three rates still dominate across all groups.
 
+---
+
 ### Nationality Based Analysis
 
 | Nationality | Booking Rate             | Number of Reservations | Relative % of Reservations by Nationality |
@@ -388,6 +394,9 @@ Analyzing booking behaviors across age groups reveals clear patterns in rate pre
 - The US and RU show the most balanced distribution among the top 3 booking types, reflecting diverse preferences across their traveler base. This might suggest a wider range of traveler profiles and motivations compared to more homogenous markets like CZ or DE.
 
 - Russia (RU) stands out with the lowest Fully Flexible share (43.14%) and the highest combined share of non-refundable and niche rates, such as "Min 3 nights", indicating a more aggressive search for value deals.
+
+
+---
 
 ## Online Check-In Analyis
 
@@ -426,6 +435,8 @@ In the case of gender 1, the highest online check-in participation is seen on re
 | Sunday    | 2      | 30                 | 0                | 0.00%              |
 
 For gender 2 we see a stronger spike on Saturdays with respect to other days of the week, where 23.53% of reservations created this day see online check-in, 12.05% higher than gender 1. There is also a significant difference in participation rates for Friday and Sunday, where in this group we see close to no use of online check-in.
+
+---
 
 ### Age Group
 
@@ -470,6 +481,9 @@ Age-Related Behavior:
 
 Online Check-In participation in Age Group 25 reaches a maximum on Saturdays, with 1 out of 4 reservations created that day having online check-in.
 
+
+---
+
 ### Nationality
 
 
@@ -486,6 +500,10 @@ Online Check-In participation in Age Group 25 reaches a maximum on Saturdays, wi
 RU, GB and US lead the use of online check-in by nationality with about 1 in 10 guests making use of it. CZ, DE, and SK, show decreasing online check-in participation correspondingly, all of which belong to Central Europe. China on the other hand does not participate at all in online check-ins. This may be to country or system limitations, would require further investigation.
 
 In this case, we have insufficient data to make a determination if countries behave in a different manner when it comes to the use of online check-in for different week days. The highest number of online check-in is on Mondays for GB and that is just 6 reservations.
+
+
+---
+
 
 ## Profitability Analysis by Customer Segment
 
