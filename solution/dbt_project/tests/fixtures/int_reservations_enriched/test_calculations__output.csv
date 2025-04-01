@@ -1,0 +1,5 @@
+start_datetime_utc,end_datetime_utc,creation_datetime_utc,number_of_nights,total_night_cost,total_space_capacity,number_of_guests,stay_length_days,cost_per_night,night_cost_per_unit_capacity,space_occupancy_rate,creation_week_day
+2023-01-01 15:00:00,2023-01-03 11:00:00,2022-12-31 10:00:00,2,200,1,2,2,100,100.00,2.00,Saturday
+2023-01-01 15:00:00,2023-01-03 11:00:00,2022-12-30 10:00:00,2,200,3,2,2,100,33.333333333333336,0.67,Friday
+2023-01-01 15:00:00,2023-01-03 11:00:00,2022-12-29 10:00:00,2,200,0,2,2,100,50.00,1,Thursday
+2023-01-01 15:00:00,2023-01-02 11:00:00,2022-12-29 10:00:00,1,100,2,0,3,100,50.00,0.00,Thursday

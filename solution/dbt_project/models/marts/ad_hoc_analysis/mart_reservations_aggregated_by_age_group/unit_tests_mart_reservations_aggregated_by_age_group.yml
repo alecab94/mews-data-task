@@ -1,0 +1,13 @@
+unit_tests:
+  - name: test_calculations
+    description: "This tests all aggregate calculations made in the macro aggregate_reservations_by_segment."
+    model: mart_reservations_aggregated_by_age_group
+  
+    given:
+      - input: ref('int_reservations_enriched')
+        format: csv
+        fixture: test_aggregate_calculations__int_reservations_enriched__input
+
+    expect:
+      format: csv
+      fixture: test_aggregate_calculations__output

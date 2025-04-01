@@ -1,0 +1,16 @@
+unit_tests:
+  - name: test_calculations
+    description: "This tests if cost per night and night cost per unit capacity are correctly calculated."
+    model: int_reservations_enriched
+    given:
+      - input: ref('stg_reservations')
+        format: csv
+        fixture: test_calculations__stg_reservations__input
+
+      - input: ref('stg_rates')
+        format: csv
+        fixture: test_calculations__stg_rates__input
+
+    expect:
+      format: csv
+      fixture: test_calculations__output
