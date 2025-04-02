@@ -36,7 +36,7 @@ git clone https://github.com/alecab94/mews-data-task
 
 ### Step 2: Build the Docker Image
 
-From the project root (mews-data-task/) directory, run:
+From the solution directory, run:
 
 ```bash
 docker-compose up --build
